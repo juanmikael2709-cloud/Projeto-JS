@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1e1b4b, #312e81);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#card {
+    background: #ffffff;
+    color: #1e293b;
+    width: 100%;
+    max-width: 480px;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+    color: #000000;
+}
+
+#pergunta-texto {
+    font-size: 1.25rem;
+    margin-bottom: 24px;
+    font-weight: 600;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botoes {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    flex: 1;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.1s background-color 0.2s ease;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn-sim {
+    background-color: #1cac51;
+    color: #fff;
+}
+
+.btn-sim:active {
+    background-color: #007a2d;
+}
+
+.btn-nao {
+    background-color: #e0113e;
+    color: #fff;
+}
+
+.btn-nao:active {
+    background-color: #9f1239;
+}
+
+.btn-secundario {
+    background: none;
+    border: 1px solid #cdb5e1;  
+}
+
+.btn-secundario:hover {
+    background-color: #f1f5f9;
+}
+
+
+.especial {
+    flex: 1;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: transform 0.1s background-color 0.2s ease;
+    margin-top: 10px;
+}
