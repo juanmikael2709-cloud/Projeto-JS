@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plataforma de Jogos e Opções</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- MENU PRINCIPAL -->
+  <main id="menu-screen" class="screen">
+    <div class="card">
+      <h1>Menu Principal</h1>
+      <p>Escolha uma das opções abaixo para navegar:</p>
+
+      <!-- index.html -->
+<div class="menu-options">
+  <a href="/Akinator/index.html" class="btn primary">1. Akinator das Profissões (Juan)</a>
+  <a href="/Lucas/main.html" class="btn secondary">2. Teste Vocacional (Lucas)</a>
+  <a href="/melissa/index.html" class="btn secondary">3. Site Informativo (Melissa)</a>
+</div>
+    </div>
+  </main>
+
+  <!-- TELA 1: AKINATOR -->
+  <section id="akinator-screen" class="screen hidden">
+    <div class="card">
+      <header class="game-header">
+        <button class="btn-back" onclick="showScreen('menu-screen')">← Menu</button>
+        <h2>Akinator</h2>
+      </header>
+
+      <div id="game-content">
+        <p id="akinator-question">Carregando pergunta...</p>
+        <div class="answers-group">
+          <button class="btn answer-btn" onclick="handleAkinatorAnswer(true)">Sim</button>
+          <button class="btn answer-btn" onclick="handleAkinatorAnswer(false)">Não</button>
+        </div>
+      </div>
+
+      <div id="game-result" class="hidden">
+        <h3 id="result-text"></h3>
+        <button class="btn primary" onclick="restartAkinator()">Jogar Novamente</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TELA 2: OPÇÃO 2 -->
+  <section id="opcao2-screen" class="screen hidden">
+    <div class="card">
+      <button class="btn-back" onclick="showScreen('menu-screen')">← Menu</button>
+      <h2>Opção 2</h2>
+      <p>Conteúdo da segunda opção aqui.</p>
+    </div>
+  </section>
+
+  <!-- TELA 3: OPÇÃO 3 -->
+  <section id="opcao3-screen" class="screen hidden">
+    <div class="card">
+      <button class="btn-back" onclick="showScreen('menu-screen')">← Menu</button>
+      <h2>Opção 3</h2>
+      <p>Conteúdo da terceira opção aqui.</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

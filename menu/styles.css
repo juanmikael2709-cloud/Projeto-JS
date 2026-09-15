@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #0f172a;
+  color: #f8fafc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.screen {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.card {
+  background-color: #1e293b;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+h1 { margin-bottom: 10px; color: #38bdf8; }
+p { margin-bottom: 20px; color: #94a3b8; }
+
+.menu-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn {
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.1s, background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn:active { transform: scale(0.98); }
+
+.btn.primary { background-color: #334155; color: white; text-decoration: none;}
+.btn.primary:hover { background-color: #0369a1; text-decoration: none; }
+
+.btn.secondary { background-color: #334155; color: white; text-decoration: none;}
+.btn.secondary:hover { background-color: #334155; text-decoration: none;}
+
+.num {
+  background: rgba(255,255,255,0.2);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.game-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.btn-back {
+  background: none;
+  border: none;
+  color: #38bdf8;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.answers-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.answer-btn {
+  flex: 1;
+  background-color: #334155;
+  color: white;
+}
+.answer-btn:hover { background-color: #0284c7; }
