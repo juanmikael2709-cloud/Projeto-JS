@@ -1,0 +1,31 @@
+/* Configurações Globais */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* Transição suave de fundo ao alternar entre modo claro e escuro */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Animação suave para os cartões e containers */
+main, button, div, span, img {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+}
+
+/* Efeito de clique nos botões das opções */
+#options-container button:active {
+  transform: scale(0.98);
+}
+
+/* Esconde a barra de rolagem caso haja transbordo visual */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

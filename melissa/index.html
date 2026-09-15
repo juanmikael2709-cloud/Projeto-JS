@@ -2,13 +2,73 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Akinator de Profissões</title>
-  <link rel="stylesheet" href="melissa.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz: Qual é este Professor?</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <h1></h1>
-  <button id="la-ele" onclick="iniciarJogo()">Começar Jogo</button>
+<body class="bg-slate-100 dark:bg-slate-900 min-h-screen flex items-center justify-center p-4 text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300">
 
-  <script src="/script.js"></script>
+  <main class="relative w-full max-w-lg bg-white dark:bg-slate-800 rounded-2xl shadow-xl overflow-hidden p-6 transition-colors duration-300">
+    
+    <!-- Botão de Modo Escuro / Claro (Posicionado absolutamente no canto superior direito) -->
+    <button id="theme-toggle" class="absolute top-5 right-5 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-700 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600 transition">
+  <span id="theme-text">Modo Escuro</span>
+</button>
+
+<!-- Cabeçalho com espaçamento lateral suficiente (px-20) para não colidir com o botão -->
+<header class="mb-6 text-center px-20">
+  <h1 class="text-2xl font-bold text-slate-800 dark:text-slate-100">Quem é este Professor?</h1>
+  <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Descubra se você realmente conhece seus professores!</p>
+</header>
+
+    <!-- Barra de Progresso -->
+    <div class="mb-6">
+      <div class="flex justify-between text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1">
+        <span id="progress-text">Pergunta 1 de 5</span>
+        <span id="progress-percent">20%</span>
+      </div>
+      <div class="w-full bg-slate-200 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
+        <div id="progress-bar" class="bg-indigo-600 dark:bg-indigo-500 h-full w-1/5 transition-all duration-300"></div>
+      </div>
+    </div>
+
+    <!-- Container do Quiz -->
+    <section id="quiz-container" class="block">
+      <!-- Container da Imagem -->
+      <div id="image-container" class="mb-5 flex justify-center">
+        <div class="w-48 h-48 rounded-xl overflow-hidden shadow-md bg-slate-100 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 flex items-center justify-center">
+          <img id="teacher-image" src="" alt="Foto do Professor" class="w-full h-full object-cover">
+        </div>
+      </div>
+
+      <!-- Pergunta -->
+      <h2 id="question-text" class="text-lg font-semibold text-center mb-6 text-slate-700 dark:text-slate-200"></h2>
+
+      <!-- Opções de Resposta -->
+      <div id="options-container" class="space-y-3"></div>
+    </section>
+
+    <!-- Tela de Resultado Final -->
+    <section id="result-container" class="hidden text-center py-6">
+      <div class="mb-4 inline-flex items-center justify-center w-20 h-20 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 rounded-full text-3xl font-bold">
+        🎉
+      </div>
+      <h2 class="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-2">Quiz Concluído!</h2>
+      <p class="text-slate-600 dark:text-slate-300 mb-6">Você acertou <span id="final-score" class="font-bold text-indigo-600 dark:text-indigo-400 text-xl">0</span> de <span id="total-questions" class="font-bold">5</span> perguntas.</p>
+      
+      <button id="restart-btn" class="w-full py-3 px-6 bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white font-semibold rounded-xl shadow-md hover:shadow-lg transition">
+        Tentar Novamente
+      </button>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
 </body>
-</html>   
+</html>
