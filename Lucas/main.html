@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste Vocacional</title>
+  <link rel="stylesheet" href="input.css">
+</head>
+<body>
+
+  <div class="quiz-container">
+    <div id="quiz-screen">
+      <div class="progress-bar">
+        <div id="progress" class="progress-fill"></div>
+      </div>
+
+      <span id="question-number" class="step-label">Pergunta 1 de 15</span>
+      <h2 id="question-text">Carregando pergunta...</h2>
+
+      <div id="options-container" class="options-group"></div>
+
+      <div class="nav-buttons">
+        <button id="btn-prev" onclick="perguntaAnterior()" disabled>Anterior</button>
+        <button id="btn-next" onclick="proximaPergunta()" disabled>Próximo</button>
+      </div>
+    </div>
+
+    <div id="result-screen" class="hidden">
+      <h2>Seu Resultado Vocacional</h2>
+      <div id="result-profile" class="result-box"></div>
+      <div id="result-breakdown" class="breakdown-list"></div>
+      <button onclick="reiniciarTeste()" class="btn-restart">Refazer Teste</button>
+    </div>
+  </div>
+
+<button id="theme-toggle" class="theme-btn">Alternar cor da pagina</button>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>

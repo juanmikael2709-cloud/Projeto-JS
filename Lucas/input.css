@@ -1,0 +1,129 @@
+:root {
+  --bg-color: #f4f6f8;
+  --text-color: #1f2937;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --subtext-color: #666666;
+}
+
+/* Quando o body tiver a classe 'dark-mode', estas variáveis assumem novos valores */
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #f9fafb;
+  --card-bg: #1e1e1e;
+  --card-border: #374151;
+  --subtext-color: #9ca3af;
+}
+
+/* 2. BODY UNIFICADO */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color); /* Usa a variável */
+  color: var(--text-color);            /* Usa a variável */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* 3. ELEMENTOS USANDO AS VARIÁVEIS */
+.quiz-container {
+  background: var(--card-bg); /* Mudar para dark mode altera o fundo do container */
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.step-label {
+  font-size: 14px;
+  color: var(--subtext-color);
+}
+
+.option-card {
+  padding: 12px 16px;
+  border: 2px solid var(--card-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+.option-card:hover {
+  border-color: #2563eb;
+}
+
+.option-card.selected {
+  border-color: #2563eb;
+  background-color: #dbeafe;
+  color: #1f2937; /* Mantém o texto escuro ao selecionar para dar contraste */
+}
+
+/* Restante do estilo (Botões e Progress Bar) */
+.progress-bar {
+  background-color: var(--card-border);
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.progress-fill {
+  background-color: #2563eb;
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.options-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.hidden {
+  display: none;
+}
+
+.result-box {
+  background-color: var(--card-border);
+  border-left: 4px solid #2563eb;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.theme-btn {
+  position: fixed;   /* Fixa o elemento na tela */
+  top: 20px;         /* Distância do topo da tela */
+  right: 20px;       /* Distância da direita da tela */
+  z-index: 1000;     /* Garante que o botão fique em cima de outros elementos */
+}
+
+.theme-btn:hover {
+  transform: scale(1.05); /* Efeito suave ao passar o mouse */
+}
